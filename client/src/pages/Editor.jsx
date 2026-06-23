@@ -48,7 +48,7 @@ useEffect(() => {
   const loadRoom = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/room/${roomId}`
+        `https://collaborative-coding-platform-fdct.onrender.com/room/${roomId}`
       );
 
       if (!res.data) return;
@@ -75,7 +75,7 @@ useEffect(() => {
   if (!id) return;
 
   axios
-    .get(`http://localhost:5000/problems/${id}`)
+    .get(`https://collaborative-coding-platform-fdct.onrender.com/problems/${id}`)
     .then((res) => {
       setProblem(res.data);
     })
@@ -89,7 +89,7 @@ useEffect(() => {
   const interval = setInterval(async () => {
     try {
       await axios.post(
-        "http://localhost:5000/save-room",
+        "https://collaborative-coding-platform-fdct.onrender.com/save-room",
         {
           roomId,
           code,
@@ -144,7 +144,7 @@ useEffect(() => {
       setOutput("Running...");
 
       const response = await axios.post(
-        "http://localhost:5000/run",
+        "https://collaborative-coding-platform-fdct.onrender.com/run",
         {
           code,
           language,
@@ -173,7 +173,7 @@ useEffect(() => {
         const test = testCases[i];
 
         const response = await axios.post(
-          "http://localhost:5000/run",
+         "https://collaborative-coding-platform-fdct.onrender.com/run",
           {
             code,
             language,
@@ -258,7 +258,7 @@ useEffect(() => {
             onClick={async () => {
               try {
                 await axios.post(
-                  "http://localhost:5000/save-room",
+                  "https://collaborative-coding-platform-fdct.onrender.com/save-room",
                   {
                     roomId,
                     code,

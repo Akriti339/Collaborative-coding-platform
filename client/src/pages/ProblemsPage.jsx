@@ -6,7 +6,7 @@ function ProblemsPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/problems")
+      .get("https://collaborative-coding-platform-fdct.onrender.com/problems")
       .then((res) => setProblems(res.data))
       .catch(console.error);
   }, []);
